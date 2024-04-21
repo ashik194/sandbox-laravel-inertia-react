@@ -1,0 +1,1 @@
+# sandbox-laravel-inertia-react
