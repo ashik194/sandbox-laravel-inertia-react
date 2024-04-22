@@ -1,0 +1,5 @@
+{
+    "dashboard":["Admin"],
+    "app":["Calendar","Chat","Email","Ecommerce","Projects"],
+    "layout":["Horizontal","Detached","Two Column","Hovered"]
+}

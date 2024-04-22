@@ -3,7 +3,6 @@ import Switch from '@/Components/Switch'
 import porsonImage from '../../../../public/person1.jpg'
 
 export default function ClientList() {
-//style={{boxShadow: "0 1px 2px rgba(56, 65, 74, 0.15)"}}
     return (
 
         <>
@@ -56,7 +55,7 @@ export default function ClientList() {
 
                                 <td className="px-2.5 py-3">
                                 <div class="flex flex-row items-center pr-8 gap-2">
-                                          <img src={porsonImage.src} alt="" class="w-6 h-6 rounded-full object-cover"/>
+                                          <img src={porsonImage} alt="" class="w-6 h-6 rounded-full object-cover"/>
 
                                           <p class="text-xs font-normal">William Elmore</p>
                                       </div>
@@ -125,7 +124,7 @@ export default function ClientList() {
 
                                 <td className="px-2.5 py-3">
                                 <div class="flex flex-row items-center pr-8 gap-2">
-                                          <img src={porsonImage.src} alt="" class="w-6 h-6 rounded-full object-cover"/>
+                                          <img src={porsonImage} alt="" class="w-6 h-6 rounded-full object-cover"/>
 
                                           <p class="text-xs font-normal">William Elmore</p>
                                       </div>
@@ -194,7 +193,7 @@ export default function ClientList() {
 
                                 <td className="px-2.5 py-3">
                                 <div class="flex flex-row items-center pr-8 gap-2">
-                                          <img src={porsonImage.src} alt="" class="w-6 h-6 rounded-full object-cover"/>
+                                          <img src={porsonImage} alt="" class="w-6 h-6 rounded-full object-cover"/>
 
                                           <p class="text-xs font-normal">William Elmore</p>
                                       </div>
