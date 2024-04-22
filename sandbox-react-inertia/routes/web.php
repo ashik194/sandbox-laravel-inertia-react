@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -19,6 +20,7 @@ Route::get('/', function () {
 Route::get('/admin', [AdminController::class, 'index']);
 
 // clients routes
+Route::get('/clients', [ClientController::class, 'index']);
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
