@@ -16,7 +16,7 @@ function SidebarIcon({ toggleValue, onUpdateSelected  }) {
  
   return (
     <div className='bg-white w-[70px] drop-shadow min-h-screen'>
-      <div class="flex flex-col items-center pt-6">
+      <div class="flex flex-col items-center pt-6 sticky top-0 left-0">
         <Link href="#" className='mb-6'>
           <img src={logo} alt="" height={22} width={22}/>
         </Link>
