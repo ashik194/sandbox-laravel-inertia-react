@@ -11,4 +11,12 @@ class ClientController extends Controller
     {
         return Inertia::render('Client/ClientDashPage'); 
     }
+    public function sso()
+    {
+        return Inertia::render('Client/SSOPage'); 
+    }
+    public function api()
+    {
+        return Inertia::render('Client/APIPage'); 
+    }
 }
