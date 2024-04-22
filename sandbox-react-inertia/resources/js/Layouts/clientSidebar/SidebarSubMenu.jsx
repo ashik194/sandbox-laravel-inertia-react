@@ -19,7 +19,7 @@ function SidebarSubMenu({ toggleValue, selected }) {
 
       <div className="px-5 flex flex-col justify-center items-center min-h-[70px]">
         <span className="">
-          <image src={MainLogo} alt="" height="17" />
+        <img src={MainLogo} alt="" height={17} width={99}/>
         </span>
       </div>
 
