@@ -20,9 +20,9 @@ Route::get('/', function () {
 Route::get('/admin', [AdminController::class, 'index']);
 
 // clients routes
-Route::get('/clients', [ClientController::class, 'index']);
-Route::get('/clients/sso', [ClientController::class, 'sso']);
-Route::get('/clients/api', [ClientController::class, 'api']);
+Route::get('/clients', [ClientController::class, 'index'])->name('clients');
+Route::get('/clients/sso', [ClientController::class, 'sso'])->name('sso');
+Route::get('/clients/api', [ClientController::class, 'api'])->name('api');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

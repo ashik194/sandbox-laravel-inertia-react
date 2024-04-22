@@ -4,14 +4,18 @@ import sidebarMenuData from '../../../utils/sidebarMenuData.json'
 
 function SidebarSubMenu({ toggleValue, selected }) {
 
+  const currentUrl = window.location.pathname;
+  const lastPortion = currentUrl.split('/').pop();
+  console.log(lastPortion);
+
   let message = null;
 
-  if (selected === 'clientDashboard') {
-    message = sidebarMenuData.clientDashboard;
-  } else if (selected === 'sso') {
-    message = sidebarMenuData.sso;
-  } else if (selected === 'api') {
-    message = sidebarMenuData.api;
+  if (lastPortion === 'clients') {
+    message = ["Client"];
+  } else if (lastPortion === 'sso') {
+    message = ["SSO"];
+  } else if (lastPortion === 'api') {
+    message = ["API"];
   }
 
   return (
