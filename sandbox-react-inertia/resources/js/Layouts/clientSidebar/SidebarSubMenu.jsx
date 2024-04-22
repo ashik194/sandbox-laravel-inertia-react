@@ -1,6 +1,6 @@
 import React from 'react'
 import MainLogo from '../../../../public/mainLogo.png'
-import sidebarMenuData from '../../../data/sidebarMenuData.json'
+import sidebarMenuData from '../../../utils/sidebarMenuData.json'
 
 function SidebarSubMenu({ toggleValue, selected }) {
 
