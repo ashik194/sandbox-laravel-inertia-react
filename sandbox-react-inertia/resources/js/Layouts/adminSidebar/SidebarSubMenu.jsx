@@ -1,16 +1,15 @@
+import React from 'react'
 import MainLogo from '../../../../public/mainLogo.png'
-import sidebarMenuData from '../../../utils/sidebarMenuData.json'
 
-function SidebarSubMenu({ toggleValue, selected }) {
+export default function SidebarSubMenuB({ toggleValue }) {
+
+  const currentUrl = window.location.pathname;
+  const lastPortion = currentUrl.split('/').pop();
+  //console.log(lastPortion);
 
   let message = null;
-
-  if (selected === 'dashboard') {
-    message = sidebarMenuData.dashboard;
-  } else if (selected === 'app') {
-    message = sidebarMenuData.app;
-  } else if (selected === 'layout') {
-    message = sidebarMenuData.layout;
+  if (lastPortion === 'admin') {
+    message = ["Admin"];
   }
 
   return (
@@ -18,7 +17,7 @@ function SidebarSubMenu({ toggleValue, selected }) {
 
       <div className="px-5 flex flex-col justify-center items-center min-h-[70px]">
         <span className="">
-          <img src={MainLogo} alt="" height={17} width={99}/>
+        <img src={MainLogo} alt="" height={17} width={99}/>
         </span>
       </div>
 
@@ -36,6 +35,4 @@ function SidebarSubMenu({ toggleValue, selected }) {
     </div>
 
   )
-}
-
-export default SidebarSubMenu
+} 

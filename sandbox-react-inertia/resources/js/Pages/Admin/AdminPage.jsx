@@ -4,12 +4,12 @@ import AdminLayout from '@/Layouts/AdminLayout'
 
 export default function AdminPage() {
   return (
-        <>
-        <AdminLayout>
-          <AdminDashabordView>
-            <ClientList />
-          </AdminDashabordView>
-        </AdminLayout>
-        </>
+    <>
+      <AdminLayout>
+        <AdminDashabordView>
+          <ClientList />
+        </AdminDashabordView>
+      </AdminLayout>
+    </>
   )
 }
