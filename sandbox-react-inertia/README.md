@@ -1,19 +1,31 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Sandbox 
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-</p>
+#### Technologies used : 
+1. Laravel
+2. React
+3. Inertia
+  
 
+### Getting Started
 
+After cloning the repository follow the steps given below :
 
+1. Update the `.env` file by adding your database name.
+2. Run the command `php artisan migrate` and then `php artisan serve`
+3. Run the command `npm i` and then `npm run dev`
 
-## Laravel Sponsors
+### Currently existed paths : 
+1. `/admin`
+2. `/clients`
+3. `/clients/sso`
+4. `/clients/api`
 
+### Node dependencies : 
+1. `react-particles`
+2. `tsparticles-slim`
+3. `react-icons/ri`
+4. `headlessui/react`
+5. `react-image-crop`
 
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-
-## Contributing
 
 
