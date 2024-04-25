@@ -1,0 +1,6 @@
+{
+    "dashboard":["Admin"],
+    "clientDashboard":["Client"],
+    "sso":["SSO"],
+    "api":["API"]
+}
