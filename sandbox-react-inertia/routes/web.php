@@ -17,7 +17,7 @@ Route::get('/', function () {
 });
 
 // admin routes
-Route::get('/admin', [AdminController::class, 'index']);
+Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 
 // clients routes
 Route::get('/clients', [ClientController::class, 'index'])->name('clients');
