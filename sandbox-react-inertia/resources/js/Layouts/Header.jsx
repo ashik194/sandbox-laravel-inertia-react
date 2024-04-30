@@ -97,9 +97,12 @@ function Header(props) {
         <a className="flex items-center py-2 px-3 rounded-md text-sm text-gray-100 hover:bg-gray-800" href="#">
             Lock Account
         </a> */}
-        <Link className="flex items-center py-2 px-3 rounded-md text-sm text-gray-100 hover:bg-gray-800" href="#">
+        <Link href={route('logout')} method="post" as="button" className="flex items-center py-2 px-3 rounded-md text-sm text-gray-100 hover:bg-gray-800" >
             Log Out
         </Link>
+        {/* <Dropdown.Link href={route('logout')} method="post" as="button">
+            Log Out
+        </Dropdown.Link> */}
     </div>
 </div>
 </header>

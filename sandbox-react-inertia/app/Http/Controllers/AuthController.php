@@ -55,7 +55,8 @@ class AuthController extends Controller
     {
         //
         try{
-            $user   = (new AuthService())->AuthCreate($request);
+            return $user   = (new AuthService())->AuthCreate($request);
+            
             return response()->json([
                 'status'    => true, 
                 'data'      => $user, 
@@ -93,8 +94,25 @@ class AuthController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Request $request)
     {
         //
+        try{
+            Auth::guard('api')->user()->token()->revoke();
+
+            return response()->json(
+                [
+                    'message' => "Successfully logged out"
+                ]
+            );
+        }catch(\Exception $e){
+            return response()->json(
+                [
+                    "message" => $e->getMessage()
+                ],
+                200
+            );
+        }
+
     }
 }

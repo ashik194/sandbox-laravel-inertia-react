@@ -8,8 +8,10 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 use Inertia\Inertia;
 use Inertia\Response;
+use Illuminate\Validation\ValidationException;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -29,11 +31,26 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request): RedirectResponse
     {
-        $request->authenticate();
+        // $request->authenticate();
 
-        $request->session()->regenerate();
+        if(Auth::attempt($request->only('email', 'password'), $request->boolean('remember'))){
+            $request->session()->regenerate();
+            if(Auth::user()->type === 1){
+                return redirect()->route('admin.dashboard');
+            }else if(Auth::user()->type === 2){
+                return redirect()->route('client.dashboard');
+            }else{
+                return redirect('/');
+            }
+        }else{
+            throw ValidationException::withMessages([
+                'email' => trans('auth.failed'),
+            ]);
+        }
 
-        return redirect()->intended(route('dashboard', absolute: false));
+
+        // return redirect()->intended(route('dashboard', absolute: false));
+        
     }
 
     /**

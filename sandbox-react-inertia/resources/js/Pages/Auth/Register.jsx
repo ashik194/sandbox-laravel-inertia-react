@@ -1,11 +1,32 @@
 import ParticlesContent from '@/Components/Particles';
 import backgroundImage from '../../../../public/bgimaget.jpg';
-import { Link } from '@inertiajs/react';
+import { Link, useForm } from '@inertiajs/react';
+import { useEffect } from 'react';
+import InputError from '@/Components/InputError';
 
 export default function Register() {
     const bgImageStyles = {
         backgroundImage: `url(${backgroundImage})`,
     }
+
+    const { data, setData, post, processing, errors, reset } = useForm({
+        name: '',
+        email: '',
+        password: '',
+        password_confirmation: '',
+    });
+
+    useEffect(() => {
+        return () => {
+            reset('password', 'password_confirmation');
+        };
+    }, []);
+
+    const submit = (e) => {
+        e.preventDefault();
+
+        post(route('register'));
+    };
     return (
         <>
             <div className='bg-[#F3F3F9] min-h-screen z-20'>
@@ -53,7 +74,7 @@ export default function Register() {
                             </div>
 
                             <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-                        <form className="space-y-6" action="#" method="POST">
+                        <form className="space-y-6" onSubmit={submit}>
                             <div>
                                 <label htmlFor="name" className="block text-sm font-medium  text-gray-900">
                                     Username
@@ -64,11 +85,14 @@ export default function Register() {
                                         name="name"
                                         type="text"
                                         autoComplete=""
+                                        value={data.name}
+                                        onChange={(e) => setData('name', e.target.value)}
                                         placeholder="Enter username"
                                         className="block w-full rounded-md border-1 py-2 text-gray-700 border-gray-300 placeholder:text-xs placeholder:font-medium placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                         required
                                     />
                                 </div>
+                                <InputError message={errors.name} className="mt-2" />
                             </div>
                             <div>
                                 <label htmlFor="email" className="block text-sm font-medium  text-gray-900">
@@ -79,12 +103,15 @@ export default function Register() {
                                         id="email"
                                         name="email"
                                         type="email"
+                                        value={data.email}
+                                        onChange={(e) => setData('email', e.target.value)}
                                         autoComplete="email"
                                         placeholder="Enter Email"
                                         className="block w-full rounded-md border-1 py-2 text-gray-700 border-gray-300 placeholder:text-xs placeholder:font-medium placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                         required
                                     />
                                 </div>
+                                <InputError message={errors.email} className="mt-2" />
                             </div>
 
                             <div>
@@ -98,12 +125,36 @@ export default function Register() {
                                         id="password"
                                         name="password"
                                         type="password"
+                                        value={data.password}
+                                        onChange={(e) => setData('password', e.target.value)}
                                         autoComplete="current-password"
                                         placeholder="Enter password"
                                         required
                                         className="block w-full rounded-md border-1 py-2 text-gray-700 border-gray-300 placeholder:text-xs placeholder:font-medium placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                     />
                                 </div>
+                                <InputError message={errors.password} className="mt-2" />
+                            </div>
+                            <div>
+                                <div className="flex items-center justify-between">
+                                    <label htmlFor="password" className="block text-sm font-medium  text-gray-900">
+                                        Password Confirmation
+                                    </label>
+                                </div>
+                                <div className="mt-2">
+                                    <input
+                                        id="password_confirmation"
+                                        name="password_confirmation"
+                                        type="password"
+                                        value={data.password_confirmation}
+                                        onChange={(e) => setData('password_confirmation', e.target.value)}
+                                        autoComplete="current-password"
+                                        placeholder="Enter Confirm password"
+                                        required
+                                        className="block w-full rounded-md border-1 py-2 text-gray-700 border-gray-300 placeholder:text-xs placeholder:font-medium placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                    />
+                                </div>
+                                <InputError message={errors.password_confirmation} className="mt-2" />
                             </div>
                             <div>
                                 <label className="block text-gray-500 font-bold" for="remember">
