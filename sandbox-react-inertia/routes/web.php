@@ -19,6 +19,7 @@ Route::get('/', function () {
 });
 
 // admin routes
+
 // Route::get('/admin', [AdminController::class, 'index']);
 
 // clients routes

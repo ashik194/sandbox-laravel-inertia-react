@@ -1,28 +1,27 @@
+import React from 'react'
 import MainLogo from '../../../../public/mainLogo.png'
-import sidebarMenuData from '../../../utils/sidebarMenuData.json'
 
-function SidebarSubMenu({ toggleValue, selected }) {
+export default function SidebarSubMenuB({ toggleValue }) {
+
+  const currentUrl = window.location.pathname;
+  const lastPortion = currentUrl.split('/').pop();
+  //console.log(lastPortion);
 
   let message = null;
-
-  if (selected === 'dashboard') {
-    message = sidebarMenuData.dashboard;
-  } else if (selected === 'app') {
-    message = sidebarMenuData.app;
-  } else if (selected === 'layout') {
-    message = sidebarMenuData.layout;
+  if (lastPortion === 'admin') {
+    message = ["Admin"];
   }
 
   return (
     <div className={toggleValue ? 'bg-[#f6f8fa] w-[220px] min-h-screen block' : 'bg-[#f6f8fa] w-[220px] min-h-screen hidden'}>
 
-      <div className="px-5 flex flex-col justify-center items-center min-h-[70px]">
+      <div className="px-5 flex flex-col justify-center items-center min-h-[70px] sticky top-0">
         <span className="">
-          <img src={MainLogo} alt="" height={17} width={99}/>
+        <img src={MainLogo} alt="" height={17} width={99}/>
         </span>
       </div>
 
-      <div className='pl-7 flex flex-col text-[#7c7f90] text-sm cursor-pointer'>
+      <div className='pl-7 flex flex-col text-[#7c7f90] text-sm cursor-pointer fixed'>
         {
           message.map((items, index) => (
             <span key={index} className='flex flex-row items-center hover:text-[#25a0e2]'>
@@ -36,6 +35,4 @@ function SidebarSubMenu({ toggleValue, selected }) {
     </div>
 
   )
-}
-
-export default SidebarSubMenu
+} 
