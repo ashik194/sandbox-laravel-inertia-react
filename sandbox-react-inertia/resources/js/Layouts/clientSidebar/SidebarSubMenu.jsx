@@ -10,7 +10,7 @@ function SidebarSubMenu({ toggleValue, selected }) {
 
   let message = null;
 
-  if (lastPortion === 'clients') {
+  if (lastPortion === 'clients-dashboard') {
     message = ["Client"];
   } else if (lastPortion === 'sso') {
     message = ["SSO"];

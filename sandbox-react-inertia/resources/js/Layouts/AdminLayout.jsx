@@ -30,7 +30,7 @@ export default function AdminLayout({children}) {
           </div>
          
 
-        <div className="flex flex-col">
+        <div className="flex w-full flex-col">
           <Header handleToggleValue={handleToggleValue} />
         {children}
         </div>

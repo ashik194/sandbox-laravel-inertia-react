@@ -14,8 +14,26 @@ export default function SSOPage() {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [refreshText, setRefreshText] = useState("");
 
+    const [values, setValues] = useState({
+        name: null,
+        email: null,
+        client_id: null
+    });
+
+    const handleChange = (e) => {
+        setValues(values => ({
+            ...values, 
+            [e.target.id] : e.target.value
+        }))
+    }
+
+    const ssoSubmit = (e) => {
+        e.preventDefault();
+        console.log(values);
+    }
+
     const handleRefreshText = () => {
-          const characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+          const characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()';
               let result = ' ';
             const charactersLength = characters.length;
             for( let i = 0; i < 30; i++ ){
@@ -54,7 +72,7 @@ export default function SSOPage() {
                     SSO
                 </div>
                 <div className="p-6">
-                    <form>
+                    <form onSubmit={ssoSubmit}>
                         <div className='w-full '>
                         {/* <div className="flex flex-wrap -mx-3 mb-6"> */}
                             <div className="w-full mt-4 px-3 mb-6 md:mb-0">
@@ -65,6 +83,9 @@ export default function SSOPage() {
                                 className="appearance-none block w-full  text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" 
                                 type="text"
                                 name=""
+                                id='name'
+                                value={values.name}
+                                onChange={handleChange}
                                 
                                 placeholder="Enter your Name"/>
                             </div>
@@ -76,6 +97,9 @@ export default function SSOPage() {
                                 <input className="appearance-none block w-full  text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" 
                                 type="email"
                                 name=""
+                                id='email'
+                                value={values.email}
+                                onChange={handleChange}
                                 
                                 placeholder="Enter your email"/>
                             </div>
