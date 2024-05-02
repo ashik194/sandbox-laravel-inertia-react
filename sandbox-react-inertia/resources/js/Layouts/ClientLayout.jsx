@@ -5,7 +5,7 @@ import SidebarSubMenu from "@/Layouts/clientSidebar/SidebarSubMenu";
 
 export default function ClientLayout({ children }) {
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    const [toggleValue, setToggleValue] = useState(false)
+    const [toggleValue, setToggleValue] = useState(true)
     const handleToggleValue = (toggle) => {
         setToggleValue(toggle)
     }
@@ -19,7 +19,7 @@ export default function ClientLayout({ children }) {
 
     return (
         <>
-        <div className="flex">
+        <div className="bg-[#f3f3f9] flex">
           
             {/* Sidebar */}
             

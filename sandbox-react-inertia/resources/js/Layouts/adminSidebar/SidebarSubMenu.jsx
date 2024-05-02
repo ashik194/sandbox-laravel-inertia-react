@@ -8,12 +8,12 @@ export default function SidebarSubMenuB({ toggleValue }) {
   //console.log(lastPortion);
 
   let message = null;
-  if (lastPortion === 'admin') {
-    message = ["Admin"];
+  if (lastPortion === 'admin-dashboard') {
+    message = ["admin-dashboard"];
   }
 
   return (
-    <div className={toggleValue ? 'bg-[#f6f8fa] w-[220px] min-h-screen block' : 'bg-[#f6f8fa] w-[220px] min-h-screen hidden'}>
+    <div className={toggleValue ? 'bg-white w-[220px] border-r border-r-gray-100 shadow-[rgba(15,_34,_58,_0.22)_0px_2px_2px] min-h-screen block' : 'bg-[#f6f8fa] shadow-[rgba(15,_34,_58,_0.22)_0px_2px_2px] w-[220px] min-h-screen hidden'}>
 
       <div className="px-5 flex flex-col justify-center items-center min-h-[70px] sticky top-0">
         <span className="">
@@ -24,7 +24,7 @@ export default function SidebarSubMenuB({ toggleValue }) {
       <div className='pl-7 flex flex-col text-[#7c7f90] text-sm cursor-pointer fixed'>
         {
           message.map((items, index) => (
-            <span key={index} className='flex flex-row items-center hover:text-[#25a0e2]'>
+            <span key={index} className='flex flex-row items-center hover:text-[#405189]'>
               <p>-</p>
               <p className='pl-6 py-2'>{items}</p>
             </span>

@@ -49,11 +49,11 @@ export default function ClientDashboard() {
   // )
   return (
     <>
-        <div className='px-6 py-2 mt-2 border border-t-0 border-b-[#e9ebec] bg-white'>
+        <div className='px-6 py-2  border border-t-0 border-b-[#e9ebec] bg-white'>
           <h4 className='text-[15px] font-bold uppercase '>Dashboard</h4>
       </div>
       <div className='px-6 mt-6 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5'>
-        <div className='col-span-1 border border-[#e9ebec] py-6 px-4'>
+        <div className='bg-white col-span-1 border border-[#e9ebec] py-6 px-4'>
           <div className='flex justify-between items-center'>
             <span className='text-gray-500 uppercase font-semibold text-[0.8125rem]'>Campaign Sent</span>
             <BiUpArrowCircle className='text-xl text-green-600' />
@@ -64,7 +64,7 @@ export default function ClientDashboard() {
           </div>
         </div>
         
-        <div className='col-span-1 border border-[#e9ebec] py-6 px-4'>
+        <div className='bg-white col-span-1 border border-[#e9ebec] py-6 px-4'>
           <div className='flex justify-between items-center'>
             <span className='text-gray-500 uppercase font-semibold text-[0.8125rem]'>Campaign Sent</span>
             <BiUpArrowCircle className='text-xl text-green-600' />
@@ -75,7 +75,7 @@ export default function ClientDashboard() {
           </div>
         </div>
         
-        <div className='col-span-1 border border-[#e9ebec] py-6 px-4'>
+        <div className='bg-white col-span-1 border border-[#e9ebec] py-6 px-4'>
           <div className='flex justify-between items-center'>
             <span className='text-gray-500 uppercase font-semibold text-[0.8125rem]'>Campaign Sent</span>
             <BiUpArrowCircle className='text-xl text-green-600' />
@@ -86,7 +86,7 @@ export default function ClientDashboard() {
           </div>
         </div>
         
-        <div className='col-span-1 border border-[#e9ebec] py-6 px-4'>
+        <div className='bg-white col-span-1 border border-[#e9ebec] py-6 px-4'>
           <div className='flex justify-between items-center'>
             <span className='text-gray-500 uppercase font-semibold text-[0.8125rem]'>Campaign Sent</span>
             <BiUpArrowCircle className='text-xl text-green-600' />
@@ -97,7 +97,7 @@ export default function ClientDashboard() {
           </div>
         </div>
         
-        <div className='col-span-1 border border-[#e9ebec] py-6 px-4'>
+        <div className='bg-white col-span-1 border border-[#e9ebec] py-6 px-4'>
           <div className='flex justify-between items-center'>
             <span className='text-gray-500 uppercase font-semibold text-[0.8125rem]'>Campaign Sent</span>
             <BiUpArrowCircle className='text-xl text-green-600' />

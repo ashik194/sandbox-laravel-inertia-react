@@ -12,13 +12,13 @@ function ApiPage() {
   return (
     <>
     <ClientLayout>
-    <div className='px-4 py-2 shadow-md bg-white'>
+    <div className='px-4 py-2 bg-white'>
         <h4 className='text-[15px] font-semibold uppercase'>Clients</h4>
     </div>
         <div className='mx-8 my-4'>
             <div className='flex justify-between items-center'>
             <div
-                className="flex-1 block rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white text-surface shadow-lg shadow-gray-800/30 max-w-3xl">
+                className="flex-1 block rounded-lg bg-white shadow-[rgba(56,_65,_74,_0.15)_0px_1px_2px] dark:bg-surface-dark dark:text-white text-surface border  max-w-3xl">
                 <div
                     className="border-b-2 border-neutral-100 px-6 py-3 dark:border-white/10 font-bold text-[16px]">
                     API

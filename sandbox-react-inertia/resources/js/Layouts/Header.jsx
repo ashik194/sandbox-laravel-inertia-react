@@ -2,9 +2,11 @@
 import { Link } from '@inertiajs/react';
 import { HiMiniBars3BottomLeft } from "react-icons/hi2";
 import man from "../../../public/man.jpg";
-import { useState } from 'react';
+import { useState, useTransition } from 'react';
+import { FaArrowRightLong } from "react-icons/fa6";
 
 function Header(props) {
+    const [toggleIconTransition, setToggleIconTransition] = useTransition();
     const [toggle, setToggle] = useState(false)
     const menuToggle = () => {
         setToggle(!toggle)
@@ -16,8 +18,8 @@ function Header(props) {
     }
   return (
     <>
-    
-<header className="flex justify-between items-center px-5 gap-4 border-b-2 h-16 sticky top-0 right-0   bg-white">
+
+<header className="flex justify-between items-center px-5 gap-4 border-b-2 h-16 sticky top-0 right-0 bg-white">
 
 {/* <Link className='logo-box' href='index.html'>
     <img src="assets/images/logo-sm.png" className="h-6" alt="Small logo" />
@@ -27,7 +29,12 @@ function Header(props) {
     <span className="sr-only">Menu Toggle Button</span>
     <span className="flex items-center justify-center h-6 w-6">
         {/* <i className="ph ph-list text-2xl"></i> */}
-        <HiMiniBars3BottomLeft className='text-2xl' />
+        
+        {toggle?
+        <FaArrowRightLong  className='text-2xl durcation-900 transition-all'/>
+        :
+        <HiMiniBars3BottomLeft className='text-2xl durcation-900 transition-all' />
+        }
     </span>
 </button>
 </div>

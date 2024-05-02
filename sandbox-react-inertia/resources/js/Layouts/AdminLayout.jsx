@@ -5,7 +5,7 @@ import SidebarSubMenu from "@/Layouts/adminSidebar/SidebarSubMenu";
 
 export default function AdminLayout({ children }) {
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    const [toggleValue, setToggleValue] = useState(false)
+    const [toggleValue, setToggleValue] = useState(true)
     const handleToggleValue = (toggle) => {
 
     setToggleValue(toggle);
@@ -18,33 +18,11 @@ export default function AdminLayout({ children }) {
       console.log(selectedIcon);
     };
   
-  return (
-    <>
-    <div className="flex">
-          
-        {/* Sidebar */}
-        
-       
-          <div className='sticky top-0 flex flex-row'>
-            <SidebarIcon toggleValue={toggleValue} onUpdateSelected={handleSelectedIcon}/>
-            <SidebarSubMenu toggleValue={toggleValue} selected={selectedIcon}/> 
-          </div>
-         
-
-        <div className="flex w-full flex-col">
-          <Header handleToggleValue={handleToggleValue} />
-        {children}
-        </div>
-    </div>
-
-
-        setToggleValue(toggle)
-    }
-
+  
     
     return (
         <>
-          <div className="flex">
+          <div className="bg-[#f3f3f9] flex">
             
               {/* Sidebar */}
               <div className='sticky top-0 flex flex-row'>

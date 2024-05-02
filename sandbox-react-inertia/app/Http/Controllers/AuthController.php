@@ -8,9 +8,16 @@ use App\Models\User;
 use App\Services\AuthService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Laravel\Passport\ClientRepository;
 
 class AuthController extends Controller
 {
+    protected $clients;
+
+    public function __construct(ClientRepository $clients)
+    {
+        $this->clients = $clients;
+    }
     /**
      * Display a listing of the resource.
      */
@@ -55,7 +62,7 @@ class AuthController extends Controller
     {
         //
         try{
-            return $user   = (new AuthService())->AuthCreate($request);
+            return $user   = (new AuthService($this->clients))->AuthCreate($request);
             
             return response()->json([
                 'status'    => true, 

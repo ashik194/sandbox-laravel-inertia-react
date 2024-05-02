@@ -12,9 +12,17 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Inertia\Inertia;
 use Inertia\Response;
+use Laravel\Passport\ClientRepository;
+use Illuminate\Support\Str;
 
 class RegisteredUserController extends Controller
 {
+    protected $clients;
+
+    public function __construct(ClientRepository $clients)
+    {
+        $this->clients = $clients;
+    }
     /**
      * Display the registration view.
      */
@@ -41,11 +49,25 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
+        
+        $clientId = Str::uuid()->toString();
+        $this->clients->create($clientId, $user->id, $user->name, 'http://mygov.com.bd');
 
         event(new Registered($user));
 
-        Auth::login($user);
+        // Auth::login($user);
 
-        return redirect(route('dashboard', absolute: false));
+        if($user){
+            if(Auth::user()->type === 1){
+                return redirect()->route('admin.dashboard');
+            }else if(Auth::user()->type === 2){
+                return redirect()->route('client.dashboard');
+            }else{
+                return redirect('/');
+            }
+        }else{
+            return redirect()->route('login'); 
+        }
+        // return redirect(route('dashboard', absolute: false));
     }
 }
